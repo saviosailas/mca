@@ -39,7 +39,7 @@ int main()
     maketree(root, tree);
 
     printf("\nEdges to be included in spanning tree are: \n");
-    for (i = 1; i <= n; i++)
+    for (i = 1; i <= n-1; i++)
     {
         printf("%d->", tree[i].u);
         printf("%d\n", tree[i].v);
@@ -94,62 +94,59 @@ void maketree(int r, struct edge tree[MAX])
         }
 
         for (i = 0; i < n; i++)
-        {
             if (adj[current][i] > 0 && status[i] == TEMP)
-            {
                 if (adj[current][i] < length[i])
                 {
                     predecessor[i] = current;
                     length[i] = adj[current][i];
                 }
-            }
-        }
-        /* End of make_tree */
-
     }
 }
+/* End of make_tree */
 
- /* returns the temporary vertex with minumum value of length
-        Return NIL if no temporary vertex left or
-        all temporary vertices left have path langth inifinty*/
-        int min_temp()
+/* Returns the temporary vertex with minumum value of length
+       Return NIL if no temporary vertex left or
+       all temporary vertices left have path langth inifinty*/
+int min_temp()
+{
+    int i;
+    int min = infinity;
+    int k = -1;
+    for (i = 0; i < n; i++)
+    {
+        if (status[i] == TEMP && length[i] < min)
         {
-            int i;
-            int min = infinity;
-            int k = -1;
-            for (i = 0; i < n; i++)
-            {
-                if (status[i] == TEMP && length[i] < min)
-                {
-                    min = length[i];
-                    k = i;
-                }
-            }
-            return k;
+            min = length[i];
+            k = i;
         }
-        /* End of min_temp() */
+    }
+    return k;
+}
+/* End of min_temp() */
 
-        void create_graph()
+void create_graph()
+{
+    int i, max_edges, origin, destin, wt;
+    printf("\nKey in number of vertices: ");
+    scanf("%d", &n);
+    max_edges = n * (n - 1) / 2;
+    for (i = 1; i <= max_edges; i++)
+    {
+        printf("\nKey in edge %d(-1 -1 to quit) : ", i);
+        scanf("%d %d", &origin, &destin);
+        if ((origin == -1) && (destin == -1))
+            break;
+        printf("\nKey in weight for that edge: ");
+        scanf("%d", &wt);
+        if (origin >= n || destin >= n || origin < 0 || destin < 0)
         {
-            int i, max_edges, origin, destin, wt;
-            printf("\nKey in number of vertices: ");
-            scanf("%d", &n);
-            max_edges = n * (n - 1) / 2;
-            for (i = 1; i <= max_edges; i++)
-            {
-                printf("\nKey in edge %d(-1 -1 to quit) : ", i);
-                scanf("%d %d", &origin, &destin);
-                if((origin == -1) && (destin == -1))
-                    break;
-                printf("\nKey in weight for that edge ");
-                scanf("%d", &wt);
-                if(origin >= n || destin >= n || origin < 0 || destin < 0)
-                {
-                    printf("\nInvalid edge\n");
-                    i--;
-                } else {
-                    adj[origin][destin] = wt;
-                    adj[destin][origin] = wt;
-                }
-            }
+            printf("\nInvalid edge\n");
+            i--;
         }
+        else
+        {
+            adj[origin][destin] = wt;
+            adj[destin][origin] = wt;
+        }
+    }
+}
