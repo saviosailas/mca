@@ -62,7 +62,7 @@ void maketree(int r, struct edge tree[MAX])
         status[i] = TEMP;
     }
 
-    /* Mkae length of root vertex 0 */
+    /* Make length of root vertex 0 */
     length[r] = 0;
 
     while (1)
@@ -106,7 +106,7 @@ void maketree(int r, struct edge tree[MAX])
 
 /* Returns the temporary vertex with minumum value of length
        Return NIL if no temporary vertex left or
-       all temporary vertices left have path langth inifinty*/
+       all temporary vertices left have path length infinity*/
 int min_temp()
 {
     int i;

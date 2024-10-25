@@ -1,4 +1,4 @@
-// Matrix chain multiplication and how to place the parantheses
+// Matrix chain multiplication and how to place the parentheses
 
 #include <stdio.h>
 #include <limits.h>

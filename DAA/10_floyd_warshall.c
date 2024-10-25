@@ -22,7 +22,7 @@ void main()
     for (i = 1; i <= N; i++)
         for (j = 1; j <= N; j++)
             scanf("%d", &D[0][i][j]);
-    printf("\n the elements of the initial Distance Materix D[0] are\n");
+    printf("\n the elements of the initial Distance Matrix D[0] are\n");
     for (i = 1; i <= N; i++)
     {
         printf("\n");
