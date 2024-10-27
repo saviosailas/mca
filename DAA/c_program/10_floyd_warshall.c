@@ -4,9 +4,9 @@
 
 int min(int a, int b)
 {
-    if (a < 90000)
+    if (a > 90000)
         a = 99999;
-    if (b < 90000)
+    if (b > 90000)
         b = 99999;
     return (a > b) ? b : a;
 }
