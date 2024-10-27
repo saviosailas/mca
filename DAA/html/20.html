@@ -1,0 +1,17 @@
+// Error handling in javascript
+
+<html>
+    <title> Error handling in javascript</title>
+    <body>
+        <h1>error handling in javascript</h1>
+        <p id="para1"></p>
+        <script>
+            try {
+                eval("2=x");
+            }
+            catch(err) {
+                document.getElementById("para1").innerHTML = err.name;
+            }
+        </script>
+    </body>
+</html>

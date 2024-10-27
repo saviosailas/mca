@@ -1,6 +1,6 @@
 // Floyd Warshall
 
-// #include <stdio.h>
+#include <stdio.h>
 
 int min(int a, int b)
 {
@@ -16,7 +16,7 @@ void main()
 // #include <stdio.h>
     int i, j, V, x, y, N;
     int Z[11][11], D[11][11][11];
-    printf("\n \tKey in the count of vertices [ should be less than or equal to 10':\n]");
+    printf("\n \tKey in the count of vertices [ should be less than or equal to 10]:\n");
     scanf("%d", &N);
     printf("\n \tKey in row-wise the \t%d elements\t of the Distance Matrix \n\n\tKey in the value of the diagonal element as 0[zero]\n\n\tif there is no edge between a pair of vertices \n\tkey in 99999 as value of the distance [ edge weight ] between those two vertices \n\n", N * N);
     for (i = 1; i <= N; i++)
