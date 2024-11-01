@@ -1,0 +1,19 @@
+<html>
+<title>adding event listener</title>
+
+<body>
+    <h1> adding event listener</h1>
+    <h3>JavaScript HTML DOM addEventListener()</h3>
+    <p>Click on submit button below to which addEventListener() method is associated and shows an alert message on
+        button click.</p>
+    <button id="btn1">Submit</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", abc);
+        function abc() {
+            alert("Event handler!");
+        }
+    </script>
+</body>
+
+</html>
