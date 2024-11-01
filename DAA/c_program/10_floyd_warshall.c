@@ -27,7 +27,7 @@ void main()
             printf("\t%d", D[0][i][j]);
         }
     }
-    printf("\n the Disatance Matrices D[1] to D[%d] are\n", N);
+    printf("\n the Distance Matrices D[1] to D[%d] are\n", N);
     // calculating the elements of the Distance Matrices follows
     for (V = 1; V <= N; V++)
     {
@@ -58,7 +58,7 @@ void main()
     }
     // printing the all pair shortest distance between the vertices
 
-    printf("\n The all pair shortest path between the vetices are given in the following Matrix D[%d]\n\n", V - 1);
+    printf("\n The all pair shortest path between the vertices are given in the following Matrix D[%d]\n\n", V - 1);
     printf("\n \t\t\t\t\tD[%d] is\n\n", V - 1);
     for (j = 1; j <= N + 1; j++)
         Z[1][j] = j - 1;

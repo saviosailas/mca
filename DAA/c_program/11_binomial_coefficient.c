@@ -1,4 +1,4 @@
-// binomial coeffiecient C(n, k) by dynamic approach
+// binomial coefficient C(n, k) by dynamic approach
 
 #include<stdio.h>
 
