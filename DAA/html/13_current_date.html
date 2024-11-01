@@ -1,0 +1,58 @@
+<html>
+<html lang="en">
+<!--Java script -addition subtraction multiplication and division !-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script>
+        function getDate() {
+            var cDate = new Date();
+            document.getElementById("Date").innerHTML = cDate.toString();
+        }
+
+        function fun() {
+            var numOne = parseInt(document.getElementById("one").value);
+            var numTwo = parseInt(document.getElementById("two").value);
+            var temp = document.getElementById("res");
+
+            if (!isNaN(numOne) && !isNaN(numTwo)) {
+                temp.style.display = "block";
+
+                var res = numOne + numTwo;
+                document.getElementById("add").value = res;
+
+                res = numOne - numTwo;
+                document.getElementById("subtract").value = res;
+
+                res = numOne * numTwo;
+                document.getElementById("multiply").value = res;
+
+                res = numOne / numTwo;
+                document.getElementById("divide").value = res;
+            } else {
+                alert("Please enter valid numbers.");
+            }
+        }
+    </script>
+</head>
+
+<body onload='getDate()' style="text-align: center">
+    <h1>Current Date and Time:</h1>
+    <h2 id="Date"></h2>
+    <p id="input">
+        Enter First Number: <input id="one" type="number"> <br /><br />
+        Enter Second Number: <input id="two" type="number">
+    </p>
+    <p>
+        <button onclick="fun()">Add, Subtract, Multiply, Divide</button>
+    </p>
+    <p id="res" style="display:none;">
+        Addition Result = <input id="add" readonly> <br /><br />
+        Subtraction Result = <input id="subtract" readonly> <br /><br />
+        Multiplication Result = <input id="multiply" readonly><br /><br />
+        Division Result = <input id="divide" readonly>
+    </p>
+</body>
+
+</html>
