@@ -1,0 +1,21 @@
+<html>
+<title>multiple event listener</title>
+
+<body>
+    <h1>Adding mutiple event listeners to an element</h1>
+    <p>Click on submit button below to which to see the effects of multiple event listeners added to an element</p>
+    <button id="button1">Submit</button>
+    <script>
+        document.getElementById("button1").addEventListener("click", abc1);
+        document.getElementById("button1").addEventListener("click", abc2);
+
+        function abc1() {
+            alert("This is first click");
+        }
+        function abc2() {
+            alert("This is second click");
+        }
+    </script>
+</body>
+
+</html>
