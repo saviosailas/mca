@@ -1,0 +1,30 @@
+<html>
+<title>creating class in javascript</title>
+
+<body>
+    <h1>creating class in javascript</h1>
+    <script>
+        class Bike {
+            constructor(make) {
+                this.make = make;
+            }
+            present() {
+                return 'My bike is of type ' + this.make;
+            }
+        }
+        class BikeType extends Bike {
+            constructor(make, bike_type) {
+                super(make);
+                this.make = make;
+                this.bike_type = bike_type;
+            }
+            show() {
+                return this.present() + ',it is a ' + this.bike_type;
+            }
+        }
+        var object_bike = new BikeType("Hero", "Racer");
+        document.write(object_bike.show());
+    </script>
+</body>
+
+</html>

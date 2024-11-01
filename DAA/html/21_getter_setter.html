@@ -1,0 +1,24 @@
+<html>
+<title>displaying object name using getter and setter in javaScript</title>
+
+<body>
+    <h1>displaying object name using getter and setter in javascript</h1>
+    <script>
+        class Bike {
+            constructor(make) {
+                this.make = make;
+            }
+            get bname() {
+                return this.make;
+            }
+            set bname(x) {
+                this.make = x;
+            }
+        }
+        var obj_bike = new Bike('xyz');
+        obj_bike.bname = 'Bullet'; 
+        document.write(obj_bike.bname);
+    </script>
+</body>
+
+</html>
